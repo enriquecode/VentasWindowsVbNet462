@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1738
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VentasWindowsVbNet462", "VentasWindowsVbNet462\VentasWindowsVbNet462.vbproj", "{2E07326D-F735-4753-9920-857BE7BF96AA}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataLayer", "DataLayer\DataLayer.vbproj", "{0850C1B3-9BF9-4108-82B1-9944B24930AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E07326D-F735-4753-9920-857BE7BF96AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E07326D-F735-4753-9920-857BE7BF96AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E07326D-F735-4753-9920-857BE7BF96AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0850C1B3-9BF9-4108-82B1-9944B24930AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0850C1B3-9BF9-4108-82B1-9944B24930AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0850C1B3-9BF9-4108-82B1-9944B24930AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0850C1B3-9BF9-4108-82B1-9944B24930AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
