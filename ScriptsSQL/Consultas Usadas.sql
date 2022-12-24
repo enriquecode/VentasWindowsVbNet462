@@ -2,6 +2,7 @@ use VentasVbNet
 select * from Productos
 select * from TiposMovimientos
 select * from Movimientos
+select * from MovimientosDetalle
 --update Movimientos set fecha = '2022-12-09', [Status] = 0
 --delete from Productos
 --delete from Movimientos

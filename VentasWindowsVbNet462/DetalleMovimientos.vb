@@ -386,5 +386,43 @@ Public Class DetalleMovimientos
             MsgBox("Debe de tener al menos un registro la compra, si ya está afectada esta compra, se requiere cancelar la Compra")
             Exit Sub
         End If
+
+        Dim IdProductos As String
+        Dim Cantidades As String
+        Dim Precios As String
+        Dim Totales As String
+
+        For Each row As DataRow In dsDataGridDetalle.Tables(0).Rows
+            IdProductos += row.Item("IdProducto").ToString() + ","
+            Cantidades += row.Item("Cantidad").ToString() + ","
+            Precios += row.Item("Precio").ToString() + ","
+            Totales += row.Item("Total").ToString() + ","
+        Next row
+
+        'IdProductos = IdProductos.Substring(0, IdProductos.Length - 1)
+        'Cantidades = Cantidades.Substring(0, Cantidades.Length - 1)
+        'Precios = Precios.Substring(0, Precios.Length - 1)
+        'Totales = Totales.Substring(0, Totales.Length - 1)
+
+        Dim ds As New DataSet()
+        Dim SQLHelper As New SQLHelper()
+
+        Dim arrParams() As SqlParameter = {
+            SQLHelper.CreateParameter("@IdMovimiento", SqlDbType.Int, idMovimiento),
+            SQLHelper.CreateParameter("@IdProductos", SqlDbType.VarChar, IdProductos),
+            SQLHelper.CreateParameter("@Cantidades", SqlDbType.VarChar, Cantidades),
+            SQLHelper.CreateParameter("@Precios", SqlDbType.VarChar, Precios),
+            SQLHelper.CreateParameter("@Totales", SqlDbType.VarChar, Totales)
+        }
+
+        dsDataGridDetalle = SQLHelper.GetDataSet("sp_GuardarDetalleMovimiento", CommandType.StoredProcedure, arrParams)
+
+        DataGridDetalle.DataSource = dsDataGridDetalle.Tables(0)
+        DataGridDetalle.Refresh()
+
+        DataGridDetalle.Columns(0).Visible = False
+        DataGridDetalle.Columns(1).Visible = False
+
+        'MsgBox(IdProductos)
     End Sub
 End Class
